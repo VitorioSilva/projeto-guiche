@@ -20,21 +20,26 @@
             <div class="card">
                 <img src="{{ url_for('static', filename='Img/servicos/linha.png') }}" alt="espera">
                 <p>Gerencie a ordem de chegada dos clientes.</p>
-                <button>Acessar</button>
+                <a href="{{ url_for('gerenciador') }}">
+                    <button>Acessar</button>
+                </a>
             </div>
             <div class="card">
                 <img src="{{ url_for('static', filename='Img/servicos/check-in.png') }}" alt="check-in">
                 <p>Verifique clientes que fizeram check-in.</p>
-                <button>Acessar</button>
+                <a href="{{ url_for('check') }}">
+                    <button>Acessar</button>
+                </a>
             </div>
             <div class="card">
                 <img src="{{ url_for('static', filename='Img/servicos/historia.png') }}" alt="historia">
                 <p>Veja o histórico de atendimentos.</p>
-                <button>Acessar</button>
+                <a href="{{ url_for('historico') }}">
+                    <button>Acessar</button>
+                </a>
             </div>
         </div>
     </div>
 </body>
 
 </html>
-
