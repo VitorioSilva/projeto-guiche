@@ -261,7 +261,7 @@ h2 {
     color: #ffffff;
 }
 
-/* Estilo isolado para o formulário de contato */
+
 .contato-section {
     display: flex;
     align-items: center;
@@ -344,7 +344,7 @@ h2 {
 .contato-section button:hover {
     background-color: #406c9e;
 }
-/* Estilo da seção de contato */
+
 .contato-opcoes {
     text-align: center;
     margin-top: 40px;
@@ -584,7 +584,7 @@ form button:hover {
 
 .contato-section {
     display: flex;
-    background-color: #e6f0ff; /* Fundo azul claro */
+    background-color: #e6f0ff; 
     padding: 40px;
     border-radius: 8px;
 }
@@ -617,7 +617,7 @@ form button:hover {
 
 .formulario-contato button {
     padding: 10px;
-    background-color: #0059b3; /* Azul escuro */
+    background-color: #0059b3; 
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -647,9 +647,9 @@ form button:hover {
     height: 30px;
 }
 
-/* Estilo da seção principal de contato */
+
 .contato-opcoes {
-    background-color: #e6f0ff; /* Fundo azul claro */
+    background-color: #e6f0ff; 
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -668,7 +668,7 @@ form button:hover {
     gap: 30px;
 }
 
-/* Estilo individual das opções */
+
 .opcao {
     display: flex;
     flex-direction: column;
@@ -684,12 +684,12 @@ form button:hover {
 }
 
 .opcao:hover {
-    transform: translateY(-5px); /* Efeito de subida ao passar o mouse */
-    background-color: #0073e6; /* Tom de azul mais claro ao passar o mouse */
+    transform: translateY(-5px); 
+    background-color: #0073e6; 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo dos ícones */
+
 .icone-contato {
     width: 40px;
     height: 40px;
@@ -698,11 +698,11 @@ form button:hover {
 }
 
 .opcao:hover .icone-contato {
-    transform: scale(1.1); /* Aumenta o ícone levemente ao passar o mouse */
+    transform: scale(1.1); 
 }
 
 
-/* Estilos gerais */
+
 header {
     background: linear-gradient(135deg, #2575fc, #4e79e7);
     padding: 12px 22px;
@@ -802,7 +802,7 @@ header {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Seção de benefícios */
+
 .benefits {
     padding: 60px 20px;
     text-align: center;
@@ -991,7 +991,7 @@ header {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 40px;
-    color: #2575fc; /* Azul combinando com a parte de cima */
+    color: #2575fc; 
     animation: fadeIn 1s ease-out;
 }
 
@@ -1026,7 +1026,7 @@ header {
 .icon-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #2575fc; /* Azul combinando com a parte de cima */
+    color: #2575fc; 
     margin-bottom: 10px;
 }
 
@@ -1064,7 +1064,7 @@ header {
     padding: 40px 20px;
 }
 
-/* Estilo geral para todas as seções */
+
 .section {
     margin-bottom: 40px;
     padding: 40px;
@@ -1081,7 +1081,7 @@ header {
     margin-bottom: 20px;
 }
 
-/* Estilo para os títulos */
+
 .text-block h1 {
     font-size: 1.6rem;
     font-weight: 600;
@@ -1122,7 +1122,7 @@ header {
     color: #555;
 }
 
-/* Estilo da seção com o título sem ícones */
+
 .section h1 {
     font-size: 1.6rem;
     font-weight: 600;
