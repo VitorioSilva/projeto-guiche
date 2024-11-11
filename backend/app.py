@@ -17,8 +17,16 @@ def login():
 
 @app.route("/servicos")
 def servicos():
-    return render_template("/servicos.html")
+    return render_template("servicos.html")
 
 @app.route("/gerenciador")
 def gerenciador():
     return render_template("gerenciador.html")
+
+@app.route("/historico")
+def historico():
+    return render_template("historico.html")
+
+@app.route("/check")
+def check():
+    return render_template("check.html")
