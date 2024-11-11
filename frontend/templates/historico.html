@@ -3,211 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atende Já</title>
-    <link rel="stylesheet" href="/frontend/static/historico.css">
+    <title>Atende Já - Histórico de Atendimentos</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='historico.css')}}">
 </head>
 <body>
-    
-    <div id="visualImpairmentDialog" class="modal">
-        <div class="modal-content">
-            <p>VOCÊ É DEFICIENTE VISUAL?</p>
-            <button onclick="setVisualImpairment('sim')">Sim</button>
-            <button onclick="setVisualImpairment('nao')">Não</button>
-        </div>
-    </div>
-
-    <header class="historico-header">
+    <header class="header">
         <h1>Atende Já</h1>
-        <button class="back-button2" onclick="history.back()">Voltar</button>
-
+        <button class="back-button" onclick="history.back()">Voltar</button>
     </header>
 
-    <main class="historico-container2">
-        <section class="history">
-            <h2 id="historyTitle">Histórico de Atendimentos</h2>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Digite o CPF para pesquisar..." />
-                <button id="searchButton" onclick="searchCPF()">Pesquisar</button>
-            </div>
-            <div class="history-list" id="historyList">
-                <!-- Atendimento 1 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Geraldo Sebastião Pedro Henrique da Mota</p>
-                    <p><strong>CPF:</strong> 417.404.624-14</p>
-                    <p><strong>Email:</strong> geraldo_sebastiao_damota@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 18/05/1995</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>15/06/2023</li>
-                            <li>10/07/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Atendimento 2 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Victor Henry Lopes</p>
-                    <p><strong>CPF:</strong> 466.641.204-29</p>
-                    <p><strong>Email:</strong> victor-lopes87@outlook.com</p>
-                    <p><strong>Data de Nascimento:</strong> 25/02/1995</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>20/05/2023</li>
-                            <li>30/08/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Atendimento 3 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Maria Clara dos Santos</p>
-                    <p><strong>CPF:</strong> 946.713.474-55</p>
-                    <p><strong>Email:</strong> mariaclara.santos@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 10/10/1988</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>15/01/2023</li>
-                            <li>25/02/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Atendimento 4 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Carlos Alberto da Silva</p>
-                    <p><strong>CPF:</strong> 604.113.404-46</p>
-                    <p><strong>Email:</strong> carlos.alberto@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 30/03/1975</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>12/04/2023</li>
-                            <li>18/05/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Atendimento 5 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Ana Paula Mendes</p>
-                    <p><strong>CPF:</strong> 103.552.747-48</p>
-                    <p><strong>Email:</strong> anapaula.mendes@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 05/08/1990</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>23/09/2023</li>
-                            <li>01/10/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Atendimento 6 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Lucas Pereira</p>
-                    <p><strong>CPF:</strong> 175.925.374-57</p>
-                    <p><strong>Email:</strong> lucas.pereira@hotmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 12/12/1985</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>15/11/2023</li>
-                            <li>29/11/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                 <!-- Atendimento 7 -->
-                 <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Ronaldo Gaúcho de Oliveira</p>
-                    <p><strong>CPF:</strong> 103.552.747-48</p>
-                    <p><strong>Email:</strong> ronaldogaucho123@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 05/08/1985</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>23/09/2023</li>
-                            <li>01/10/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                 <!-- Atendimento 8 -->
-                 <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Edson Arantes do Nascimento </p>
-                    <p><strong>CPF:</strong> 626.294.747-40</p>
-                    <p><strong>Email:</strong> pele.o.rei@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 23/10/1940</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>23/09/2023</li>
-                            <li>01/10/2023</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Atendimento 9 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> Neymar Júnior dos Santos </p>
-                    <p><strong>CPF:</strong> 301.255.747-84</p>
-                    <p><strong>Email:</strong> vemprofut123@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 05/08/1990</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>23/09/2023</li>
-                            <li>01/10/2023</li>
-                        </ul>
-            </div>
-            </div>
+    <main class="container">
+        <section class="title-section">
+            <h2>Histórico de Atendimentos</h2>
+        </section>
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Digite o CPF para pesquisar...">
+            <button onclick="searchCPF()">Pesquisar</button>
+        </section>
 
-                <!-- Atendimento 10 -->
-                <div class="history-item">
-                    <p><strong>Nome do Cliente:</strong> José Luiz Datena </p>
-                    <p><strong>CPF:</strong> 010.821.636-40</p>
-                    <p><strong>Email:</strong> cadeiraforte757@gmail.com</p>
-                    <p><strong>Data de Nascimento:</strong> 05/08/1957</p>
-                    <div class="attendance-dates">
-                        <p>Datas de Atendimento:</p>
-                        <ul>
-                            <li>23/09/2023</li>
-                            <li>01/10/2023</li>
-                        </ul>
+        <section id="listahistorico">
+            <!-- Atendimento 1 -->
+            <div class="history-item" data-cpf="41740462414">
+                <p><strong>Nome:</strong> Geraldo Sebastião Pedro Henrique da Mota</p>
+                <p><strong>CPF:</strong> 417.404.624-14</p>
+                <p><strong>Email:</strong> geraldo_sebastiao_damota@gmail.com</p>
+                <p><strong>Data de Nascimento:</strong> 18/05/1995</p>
+                <div class="attendance-dates">
+                    <p>Datas de Atendimento:</p>
+                    <ul>
+                        <li>15/06/2023</li>
+                        <li>10/07/2023</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Atendimento 2 -->
+            <div class="history-item" data-cpf="46664120429">
+                <p><strong>Nome:</strong> Victor Henry Lopes</p>
+                <p><strong>CPF:</strong> 466.641.204-29</p>
+                <p><strong>Email:</strong> victor-lopes87@outlook.com</p>
+                <p><strong>Data de Nascimento:</strong> 25/02/1995</p>
+                <div class="attendance-dates">
+                    <p>Datas de Atendimento:</p>
+                    <ul>
+                        <li>20/05/2023</li>
+                        <li>30/08/2023</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Atendimento 3 -->
+            <div class="history-item" data-cpf="94671347455">
+                <p><strong>Nome:</strong> Maria Clara dos Santos</p>
+                <p><strong>CPF:</strong> 946.713.474-55</p>
+                <p><strong>Email:</strong> mariaclara.santos@gmail.com</p>
+                <p><strong>Data de Nascimento:</strong> 10/10/1988</p>
+                <div class="attendance-dates">
+                    <p>Datas de Atendimento:</p>
+                    <ul>
+                        <li>15/01/2023</li>
+                        <li>25/02/2023</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Atendimento 4 -->
+            <div class="history-item" data-cpf="60411340446">
+                <p><strong>Nome:</strong> Carlos Alberto da Silva</p>
+                <p><strong>CPF:</strong> 604.113.404-46</p>
+                <p><strong>Email:</strong> carlos.alberto@gmail.com</p>
+                <p><strong>Data de Nascimento:</strong> 30/03/1975</p>
+                <div class="attendance-dates">
+                    <p>Datas de Atendimento:</p>
+                    <ul>
+                        <li>12/04/2023</li>
+                        <li>18/05/2023</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Atendimento 5 -->
+            <div class="history-item" data-cpf="10355274748">
+                <p><strong>Nome:</strong> Ana Paula Mendes</p>
+                <p><strong>CPF:</strong> 103.552.747-48</p>
+                <p><strong>Email:</strong> anapaula.mendes@gmail.com</p>
+                <p><strong>Data de Nascimento:</strong> 05/08/1990</p>
+                <div class="attendance-dates">
+                    <p>Datas de Atendimento:</p>
+                    <ul>
+                        <li>23/09/2023</li>
+                        <li>01/10/2023</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Atendimento 6 -->
+            <div class="history-item" data-cpf="17592537457">
+                <p><strong>Nome:</strong> Lucas Pereira</p>
+                <p><strong>CPF:</strong> 175.925.374-57</p>
+                <p><strong>Email:</strong> lucas.pereira@hotmail.com</p>
+                <p><strong>Data de Nascimento:</strong> 12/12/1985</p>
+                <div class="attendance-dates">
+                    <p>Datas de Atendimento:</p>
+                    <ul>
+                        <li>15/11/2023</li>
+                        <li>29/11/2023</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
 
     <script>
         function searchCPF() {
-            const input = document.getElementById('searchInput').value;
-            const filter = input.replace(/[^0-9]/g, ''); // Remove LETRAS
-            const historyItems = document.querySelectorAll('.history-item');
+            const input = document.getElementById('searchInput').value.replace(/\D/g, '');
+            const items = document.querySelectorAll('.history-item');
 
-            historyItems.forEach(item => {
-                const cpf = item.querySelector('p:nth-child(2)').innerText.split(': ')[1].replace(/[.\-]/g, ''); // Obtenha o CPF e limpe os caracteres especiais
-                if (cpf.includes(filter)) {
-                    item.style.display = ''; // Mostra se o CPF corresponder na pesquis.a
-                } else {
-                    item.style.display = 'none'; // Esconde se não corresponder na pesquisa
-                }
+            items.forEach(item => {
+                const cpf = item.getAttribute('data-cpf');
+                item.style.display = cpf.includes(input) ? 'block' : 'none';
             });
         }
-
-        function setVisualImpairment(answer) {
-            const body = document.body;
-            const historyTitle = document.getElementById('historyTitle');
-            const searchInput = document.getElementById('searchInput');
-            const searchButton = document.getElementById('searchButton');
-
-            if (answer === 'sim') {
-                body.classList.add('large-font');
-                historyTitle.classList.add('large-title');
-                searchInput.classList.add('large-input');
-                searchButton.classList.add('large-button');
-            }
-            document.getElementById('visualImpairmentDialog').style.display = 'none'; // Fecha a janela de pergunta
-        }
-
-        // Exibir o diálogo ao carregar a página
-        window.onload = function() {
-            document.getElementById('visualImpairmentDialog').style.display = 'flex';
-        };
     </script>
 </body>
 </html>

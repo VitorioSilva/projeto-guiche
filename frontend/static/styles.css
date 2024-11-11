@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -11,7 +12,7 @@ body {
 }
 
 header {
-    background-color: white;
+    background-color: rgb(112, 85, 230);
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
 }
@@ -83,7 +84,7 @@ h1 {
 
 
 .benefits {
-    background-color: #f8f9fa;
+    background-color: #105fad;
     padding: 40px 20px;
     text-align: center;
 }
@@ -176,6 +177,7 @@ p img {
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    
 }
 
 .container {
@@ -381,4 +383,871 @@ h2 {
     font-size: 16px;
     color: #333;
     line-height: 1.4;
+}
+
+
+.plano-beneficios {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+}
+
+.plano-beneficios li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.plano-botao {
+    background-color: #507dab;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.plano-botao:hover {
+    background-color: #406a91;
+}
+
+.contato-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.texto-contato {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.titulo-secundario {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.formulario-contato {
+    flex: 1;
+    max-width: 400px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background-color: #507dab;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #406a91;
+}
+
+.contato-opcoes {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icone-contato {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.plano-botao {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.plano-botao:hover {
+    background-color: #0056b3;
+}
+
+.contato-section {
+    background-color: #eaeff5;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.texto-contato h2 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.formulario-contato {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.formulario-contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.formulario-contato button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.formulario-contato button:hover {
+    background-color: #0056b3;
+}
+
+.contato-opcoes {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.opcao {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 150px;
+}
+
+.icone-contato {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.icone-contato p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.contato-section {
+    display: flex;
+    background-color: #e6f0ff; /* Fundo azul claro */
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.texto-contato {
+    flex: 1;
+    color: #003366;
+    margin-right: 20px;
+}
+
+.texto-contato h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.formulario-contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b3d1ff;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.formulario-contato button {
+    padding: 10px;
+    background-color: #0059b3; /* Azul escuro */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contato-opcoes {
+    margin-top: 20px;
+    color: #003366;
+}
+
+.opcoes {
+    display: flex;
+    gap: 20px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-contato {
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilo da seção principal de contato */
+.contato-opcoes {
+    background-color: #e6f0ff; /* Fundo azul claro */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #003366;
+    font-family: Arial, sans-serif;
+}
+
+.contato-opcoes p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Estilo individual das opções */
+.opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.opcao:hover {
+    transform: translateY(-5px); /* Efeito de subida ao passar o mouse */
+    background-color: #0073e6; /* Tom de azul mais claro ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo dos ícones */
+.icone-contato {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.opcao:hover .icone-contato {
+    transform: scale(1.1); /* Aumenta o ícone levemente ao passar o mouse */
+}
+
+
+/* Estilos gerais */
+header {
+    background: linear-gradient(135deg, #2575fc, #4e79e7);
+    padding: 12px 22px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-out;
+}
+
+.btn-cadastro {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #2575fc;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cadastro.destaque {
+    background-color: #fff;
+    color: #2575fc;
+}
+
+.btn-cadastro:hover {
+    background-color: #4e79e7;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    opacity: 0.8;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 30px;
+    color: #ffd700;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.image-placeholder {
+    position: absolute;
+    bottom: -50px;
+    right: 20px;
+    max-width: 50%;
+    animation: slideIn 1s ease-out;
+}
+
+.image-placeholder img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção de benefícios */
+.benefits {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #2575fc;
+    animation: fadeIn 1s ease-out;
+}
+
+.benefit-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.icon {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: slideIn 1s ease-out;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+}
+
+.icon-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2575fc;
+    margin-bottom: 10px;
+}
+
+.icon-description {
+    font-size: 1rem;
+    color: #666;
+    opacity: 0.8;
+}
+
+header {
+    background: linear-gradient(135deg, #2575fc, #4e79e7); /* Gradiente de azul */
+    padding: 12x 22px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-out;
+}
+
+.btn-cadastro {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #2575fc;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cadastro.destaque {
+    background-color: #fff;
+    color: #2575fc;
+}
+
+.btn-cadastro:hover {
+    background-color: #4e79e7;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    opacity: 0.8;
+}
+
+.btn-cadastro {
+    display: inline-block;
+    background-color: #2575fc;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.btn-cadastro:hover {
+    background-color: #6a11cb;
+    transform: scale(1.1);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 30px;
+    color: #ffd700;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.image-placeholder {
+    position: absolute;
+    bottom: -50px;
+    right: 20px;
+    max-width: 50%;
+    animation: slideIn 1s ease-out;
+}
+
+.image-placeholder img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.benefits {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #2575fc; /* Azul combinando com a parte de cima */
+    animation: fadeIn 1s ease-out;
+}
+
+.benefit-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.icon {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: slideIn 1s ease-out;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-image {
+    width: 80px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.icon-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2575fc; /* Azul combinando com a parte de cima */
+    margin-bottom: 10px;
+}
+
+.icon-description {
+    font-size: 1rem;
+    color: #666;
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Estilo geral para todas as seções */
+.section {
+    margin-bottom: 40px;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-block h1, .text-block p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os títulos */
+.text-block h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2575fc;
+}
+
+.icon-block {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.icon {
+    max-width: 300px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.icon p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Estilo da seção com o título sem ícones */
+.section h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2575fc;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2575fc;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.planos {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.plano {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.plano:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.plano-destaque {
+    border: 2px solid #2575fc;
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
+}
+
+.plano-titulo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #e5e9f0;
+    margin-bottom: 15px;
+}
+
+.plano-descricao {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.plano-preco {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+.plano-preco sup {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.plano-preco span {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.plano-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.plano-beneficios li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.plano-botao {
+    padding: 10px 20px;
+    background-color: #2575fc;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.plano-botao:hover {
+    background-color: #1f64d1;
 }
