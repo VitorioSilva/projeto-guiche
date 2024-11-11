@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atende Já</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     
@@ -16,7 +16,6 @@
     </header>
     
 
-    
     <section class="hero">
         <div class="overlay">
             <span class="dot"></span>
@@ -25,37 +24,31 @@
             <a href="{{ url_for('cadastro') }}" class="btn-cadastro">Login</a>
             <p class="price">Planos a partir de R$ 85,90/mês.</p>
             <div class="image-placeholder">
-                <img src="imagens/lista-de-precos.png" alt="Imagem de lista de preços" class="price-image">
+                <img src="{{ url_for('static', filename='Img/lista-de-precos.png') }}" alt="Imagem de lista de preços" class="price-image">
             </div>
         </div>
     </section>
-
-    
 
     <section class="benefits">
         <h3 class="benefits-title">Organizar a fila de espera da sua empresa nunca foi tão fácil:</h3>
         <div class="benefit-icons">
             <div class="icon">
-                <img src="imagens/imagem (1).png" alt="" class="benefit-image">
+                <img src="{{ url_for('static', filename='Img/imagem (1).png') }}" alt="" class="benefit-image">
                 <p class="icon-title">Download direto</p>
                 <p class="icon-description">Aplicativo para smartphones.</p>
             </div>
             <div class="icon">
-                <img src="imagens/pc.png" alt="" class="benefit-image">
+                <img src="{{ url_for('static', filename='Img/pc.png') }}" alt="" class="benefit-image">
                 <p class="icon-title">Acesse via desktop</p>
                 <p class="icon-description">Sistema disponível para web.</p>
             </div>
             <div class="icon">
-                <img src="imagens/confirme.png" alt="" class="benefit-image">
+                <img src="{{ url_for('static', filename='Img/confirme.png') }}" alt="" class="benefit-image">
                 <p class="icon-title">Integração fácil</p>
                 <p class="icon-description">Com QR code e notificações.</p>
             </div>
         </div>
     </section>
-    
-    <style>
-        
-    </style>
     
     <div class="container">
         <section class="section">
@@ -64,15 +57,15 @@
             </div>
             <div class="icon-block">
                 <div class="icon">
-                    <img src="imagens/whatsapp.png" alt="Whatsapp Icon">
+                    <img src="{{ url_for('static', filename='Img/whatsapp.png') }}" alt="Whatsapp Icon">
                     <p>Envio de mensagens Whatsapp usando o próprio smartphone ou computador.</p>
                 </div>
                 <div class="icon">
-                    <img src="imagens/sms.png" alt="SMS Icon">
+                    <img src="{{ url_for('static', filename='Img/sms.png') }}" alt="SMS Icon">
                     <p>Envio de SMS rápido via sistema, sem necessidade de um celular com crédito.</p>
                 </div>
                 <div class="icon">
-                    <img src="imagens/qr-digitalizar.png" alt="QR Code Icon">
+                    <img src="{{ url_for('static', filename='Img/qr-digitalizar.png') }}" alt="QR Code Icon">
                     <p>O cliente também pode acompanhar a fila via QR Code.</p>
                 </div>
             </div>
@@ -80,8 +73,8 @@
     
         <section class="section">
             <div class="text-block">
-                <p><img src="imagens/verificar.png" alt="Check Icon"> Não é necessário a instalação de software.</p>
-                <p><img src="imagens/celular (1).png" alt="Device Icon"> Sistema acessível via desktop ou aplicativo.</p>
+                <p><img src="{{ url_for('static', filename='Img/verificar.png') }}" alt="Check Icon"> Não é necessário a instalação de software.</p>
+                <p><img src="{{ url_for('static', filename='Img/celular (1).png') }}" alt="Device Icon"> Sistema acessível via desktop ou aplicativo.</p>
             </div>
             <div class="icon-block">
                 <h1>Assim como utiliza o sistema com ou sem pager</h1>
@@ -94,11 +87,11 @@
             </div>
             <div class="icon-block">
                 <div class="icon">
-                    <img src="imagens/silencioso.png" alt="Crowd Icon">
+                    <img src="{{ url_for('static', filename='Img/silencioso.png') }}" alt="Crowd Icon">
                     <p>Evita aglomerações.</p>
                 </div>
                 <div class="icon">
-                    <img src="imagens/diamante.png" alt="Diamond Icon">
+                    <img src="{{ url_for('static', filename='Img/diamante.png') }}" alt="Diamond Icon">
                     <p>Ideal para bares, restaurantes, hotéis e faculdades.</p>
                 </div>
             </div>
@@ -106,8 +99,8 @@
     
         <section class="section">
             <div class="text-block">
-                <p><img src="imagens/estrela.png" alt="Star Icon"> Pronto para ser utilizado.</p>
-                <p><img src="imagens/editar.png" alt="Evolution Icon"> Dessa forma, seu atendimento evolui.</p>
+                <p><img src="{{ url_for('static', filename='Img/estrela.png') }}" alt="Star Icon"> Pronto para ser utilizado.</p>
+                <p><img src="{{ url_for('static', filename='Img/editar.png') }}" alt="Evolution Icon"> Dessa forma, seu atendimento evolui.</p>
             </div>
             <div class="icon-block">
                 <h1>Afinal, é um Sistema de Gestão de Filas de Espera</h1>
@@ -120,239 +113,87 @@
             </div>
             <div class="icon-block">
                 <div class="icon">
-                    <img src="imagens/cartao-de-credito.png" alt="Pricing Icon">
+                    <img src="{{ url_for('static', filename='Img/cartao-de-credito.png') }}" alt="Pricing Icon">
                     <p>Cobrança com base na utilização.</p>
                 </div>
                 <div class="icon">
-                    <img src="imagens/mensagem.png" alt="Payment Icon">
+                    <img src="{{ url_for('static', filename='Img/mensagem.png') }}" alt="Payment Icon">
                     <p>Pagamento via boleto.</p>
                 </div>
                 <div class="icon">
-                    <img src="imagens/cancelar.png" alt="Cancel Icon">
+                    <img src="{{ url_for('static', filename='Img/cancelar.png') }}" alt="Cancel Icon">
                     <p>Cancelamento simplificado.</p>
                 </div>
             </div>
         </section>
     </div>
-    
 
-      <h2>Agora, escolha um plano:</h2>
-<div class="planos">
-    <div class="plano">
-        <div class="plano-titulo">Inicial</div>
-        <p class="plano-descricao">Ideal para empresas com pequenas filas ou check-ins:</p>
-        <p class="plano-preco">R$ 95<sup>,90</sup><br><span>POR MÊS</span></p>
-        <ul class="plano-beneficios">
-            <li>15 reservas na fila</li>
-            <li>Notificações via whatsapp</li>
-            <li>Acesso à fila via qr code</li>
-        </ul>
-   <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atende Já</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    
-    <header>
-        <div class="navbar">
-            <span class="logo">ATENDE JÁ.</span>
-            <a href="{{ url_for('cadastro') }}" class="btn-cadastro destaque">CADASTRE-SE</a>
+    <h2>Agora, escolha um plano:</h2>
+    <div class="planos">
+        <div class="plano">
+            <div class="plano-titulo">Inicial</div>
+            <p class="plano-descricao">Ideal para empresas com pequenas filas ou check-ins:</p>
+            <p class="plano-preco">R$ 95<sup>,90</sup><br><span>POR MÊS</span></p>
+            <ul class="plano-beneficios">
+                <li>15 reservas na fila</li>
+                <li>Notificações via whatsapp</li>
+                <li>Acesso à fila via qr code</li>
+            </ul>
+            <button class="plano-botao">ESCOLHA ESSE PLANO</button>
         </div>
-    </header>
-    
-
-    
-    <section class="hero">
-        <div class="overlay">
-            <span class="dot"></span>
-            <h1 class="hero-title">Gerencie a fila de espera da sua Empresa de forma eficiente</h1>
-            <p class="subheading">"Organize a fila por chegada, mesas e check-ins."</p>
-            <a href="{{ url_for('cadastro') }}" class="btn-cadastro">Login</a>
-            <p class="price">Planos a partir de R$ 85,90/mês.</p>
-            <div class="image-placeholder">
-                <img src="imagens/lista-de-precos.png" alt="Imagem de lista de preços" class="price-image">
-            </div>
+        <div class="plano plano-destaque">
+            <div class="plano-titulo">Intermediário</div>
+            <p class="plano-descricao">Ideal para empresas com filas intermediárias ou check-ins:</p>
+            <p class="plano-preco">R$ 140<sup>,90</sup><br><span>POR MÊS</span></p>
+            <ul class="plano-beneficios">
+                <li>30 reservas na fila</li>
+                <li>Notificações via whatsapp</li>
+                <li>Acesso à fila via qr code</li>
+            </ul>
+            <button class="plano-botao">ESCOLHA ESSE PLANO</button>
         </div>
-    </section>
-
-    
-
-    <section class="benefits">
-        <h3 class="benefits-title">Organizar a fila de espera da sua empresa nunca foi tão fácil:</h3>
-        <div class="benefit-icons">
-            <div class="icon">
-                <img src="imagens/imagem (1).png" alt="" class="benefit-image">
-                <p class="icon-title">Download direto</p>
-                <p class="icon-description">Aplicativo para smartphones.</p>
-            </div>
-            <div class="icon">
-                <img src="imagens/pc.png" alt="" class="benefit-image">
-                <p class="icon-title">Acesse via desktop</p>
-                <p class="icon-description">Sistema disponível para web.</p>
-            </div>
-            <div class="icon">
-                <img src="imagens/confirme.png" alt="" class="benefit-image">
-                <p class="icon-title">Integração fácil</p>
-                <p class="icon-description">Com QR code e notificações.</p>
-            </div>
-        </div>
-    </section>
-    
-    <style>
-        
-    </style>
-    
-    <div class="container">
-        <section class="section">
-            <div class="text-block">
-                <h1>Você escolhe a melhor opção para se comunicar com o seu cliente</h1>
-            </div>
-            <div class="icon-block">
-                <div class="icon">
-                    <img src="imagens/whatsapp.png" alt="Whatsapp Icon">
-                    <p>Envio de mensagens Whatsapp usando o próprio smartphone ou computador.</p>
-                </div>
-                <div class="icon">
-                    <img src="imagens/sms.png" alt="SMS Icon">
-                    <p>Envio de SMS rápido via sistema, sem necessidade de um celular com crédito.</p>
-                </div>
-                <div class="icon">
-                    <img src="imagens/qr-digitalizar.png" alt="QR Code Icon">
-                    <p>O cliente também pode acompanhar a fila via QR Code.</p>
-                </div>
-            </div>
-        </section>
-    
-        <section class="section">
-            <div class="text-block">
-                <p><img src="imagens/verificar.png" alt="Check Icon"> Não é necessário a instalação de software.</p>
-                <p><img src="imagens/celular (1).png" alt="Device Icon"> Sistema acessível via desktop ou aplicativo.</p>
-            </div>
-            <div class="icon-block">
-                <h1>Assim como utiliza o sistema com ou sem pager</h1>
-            </div>
-        </section>
-    
-        <section class="section">
-            <div class="text-block">
-                <h1>E melhora a experiência dos seus clientes</h1>
-            </div>
-            <div class="icon-block">
-                <div class="icon">
-                    <img src="imagens/silencioso.png" alt="Crowd Icon">
-                    <p>Evita aglomerações.</p>
-                </div>
-                <div class="icon">
-                    <img src="imagens/diamante.png" alt="Diamond Icon">
-                    <p>Ideal para bares, restaurantes, hotéis e faculdades.</p>
-                </div>
-            </div>
-        </section>
-    
-        <section class="section">
-            <div class="text-block">
-                <p><img src="imagens/estrela.png" alt="Star Icon"> Pronto para ser utilizado.</p>
-                <p><img src="imagens/editar.png" alt="Evolution Icon"> Dessa forma, seu atendimento evolui.</p>
-            </div>
-            <div class="icon-block">
-                <h1>Afinal, é um Sistema de Gestão de Filas de Espera</h1>
-            </div>
-        </section>
-    
-        <section class="section">
-            <div class="text-block">
-                <h1>E para isso, oferecemos planos flexíveis</h1>
-            </div>
-            <div class="icon-block">
-                <div class="icon">
-                    <img src="imagens/cartao-de-credito.png" alt="Pricing Icon">
-                    <p>Cobrança com base na utilização.</p>
-                </div>
-                <div class="icon">
-                    <img src="imagens/mensagem.png" alt="Payment Icon">
-                    <p>Pagamento via boleto.</p>
-                </div>
-                <div class="icon">
-                    <img src="imagens/cancelar.png" alt="Cancel Icon">
-                    <p>Cancelamento simplificado.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-
-      <h2>Agora, escolha um plano:</h2>
-<div class="planos">
-    <div class="plano">
-        <div class="plano-titulo">Inicial</div>
-        <p class="plano-descricao">Ideal para empresas com pequenas filas ou check-ins:</p>
-        <p class="plano-preco">R$ 95<sup>,90</sup><br><span>POR MÊS</span></p>
-        <ul class="plano-beneficios">
-            <li>15 reservas na fila</li>
-            <li>Notificações via whatsapp</li>
-            <li>Acesso à fila via qr code</li>
-        </ul>
-        <button class="plano-botao">ESCOLHA ESSE PLANO</button>
-    </div>
-    <div class="plano plano-destaque">
-        <div class="plano-titulo">Intermediário</div>
-        <p class="plano-descricao">Ideal para empresas com filas intermediárias ou check-ins:</p>
-        <p class="plano-preco">R$ 140<sup>,90</sup><br><span>POR MÊS</span></p>
-        <ul class="plano-beneficios">
-            <li>30 reservas na fila</li>
-            <li>Notificações via whatsapp</li>
-            <li>Acesso à fila via qr code</li>
-        </ul>
-        <button class="plano-botao">ESCOLHA ESSE PLANO</button>
-    </div>
-    <div class="plano">
-        <div class="plano-titulo">Avançado</div>
-        <p class="plano-descricao">Ideal para empresas com todos os tipos de filas ou check-ins:</p>
-        <p class="plano-preco">R$ 185<sup>,90</sup><br><span>POR MÊS</span></p>
-        <ul class="plano-beneficios">
-            <li>Reservas ilimitadas</li>
-            <li>Notificações via whatsapp</li>
-            <li>Acesso à fila via qr code</li>
-        </ul>
-        <button class="plano-botao">ESCOLHA ESSE PLANO</button>
-    </div>
-</div>
-
-
-
-<div class="contato-section">
-    <div class="texto-contato">
-        <p class="titulo-secundario">Contato</p>
-        <h2>Vamos conversar</h2>
-        <p>Se ficou com alguma dúvida ou deseja personalizar o sistema para o seu tipo de negócio, preencha o formulário ao lado e entraremos em contato.</p>
-    </div>
-    <div class="formulario-contato">
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="tel" placeholder="Telefone" required>
-            <input type="email" placeholder="E-mail" required>
-            <textarea placeholder="Escreva aqui sua mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-</div>
-
-<div class="contato-opcoes">
-    <p>Se preferir, entre em contato:</p>
-    <div class="opcoes">
-        <div class="opcao">
-            <img src="imagens/whatsapp.png" alt="Ícone de WhatsApp" class="icone-contato">
-            <p>Via Whatsapp<br>(88) 9999-9999</p>
-        </div>
-        <div class="opcao">
-            <img src="imagens/mensagem.png" alt="Ícone de E-mail" class="icone-contato">
-            <p>E-mail<br>contato@seusite.com</p>
-
-            
+        <div class="plano">
+            <div class="plano-titulo">Avançado</div>
+            <p class="plano-descricao">Ideal para empresas com todos os tipos de filas ou check-ins:</p>
+            <p class="plano-preco">R$ 185<sup>,90</sup><br><span>POR MÊS</span></p>
+            <ul class="plano-beneficios">
+                <li>Reservas ilimitadas</li>
+                <li>Notificações via whatsapp</li>
+                <li>Acesso à fila via qr code</li>
+            </ul>
+            <button class="plano-botao">ESCOLHA ESSE PLANO</button>
         </div>
     </div>
-</div>
+    <br>
+    <div class="contato-section">
+        <div class="texto-contato">
+            <p class="titulo-secundario">Contato</p>
+            <h2>Vamos conversar</h2>
+            <p>Se ficou com alguma dúvida ou deseja personalizar o sistema para o seu tipo de negócio, preencha o formulário ao lado e entraremos em contato.</p>
+        </div>
+        <div class="formulario-contato">
+            <form>
+                <input type="text" placeholder="Nome" required>
+                <input type="tel" placeholder="Telefone" required>
+                <input type="email" placeholder="E-mail" required>
+                <textarea placeholder="Escreva aqui sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="contato-opcoes">
+        <p>Se preferir, entre em contato:</p>
+        <div class="opcoes">
+            <div class="opcao">
+                <img src="{{ url_for('static', filename='Img/whatsapp.png') }}" alt="Ícone de WhatsApp" class="icone-contato">
+                <p>Via Whatsapp<br>(88) 9999-9999</p>
+            </div>
+            <div class="opcao">
+                <img src="{{ url_for('static', filename='Img/mensagem.png') }}" alt="Ícone de E-mail" class="icone-contato">
+                <p>E-mail<br>contato@seusite.com</p>
+            </div>
+        </div>
+    </div>
+    

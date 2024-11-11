@@ -934,31 +934,6 @@ header {
     animation: fadeInUp 1s ease-out;
 }
 
-.subheading {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-    color: #f0f0f0;
-    opacity: 0.8;
-}
-
-.btn-cadastro {
-    display: inline-block;
-    background-color: #2575fc;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    margin-top: 20px;
-}
-
-.btn-cadastro:hover {
-    background-color: #6a11cb;
-    transform: scale(1.1);
-}
 
 .price {
     font-size: 1.5rem;
