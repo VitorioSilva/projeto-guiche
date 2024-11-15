@@ -3,171 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CheckIn e Reservas</title>
+    <title>Check-In</title>
     <link rel="stylesheet" href="{{url_for('static', filename='check.css')}}">
-
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <span>Check-In</span>
-            <div class="header-buttons">
-                <button class="back-button">Voltar</button>
-            </div>
-        </div>
+        <header>
+            <h1>Check-In</h1>
+            <button class="back-button">Voltar</button>
+        </header>
 
-        <div class="filters">
-            <div class="filter-date">
-                <label for="data-inicio">Data de Entrada de:</label>
-                <input type="date" id="data-inicio">
-                <label for="data-fim">Até:</label>
-                <input type="date" id="data-fim">
-            </div>
-            <div class="filter-checkbox">
-                <input type="checkbox" id="mostrar-checkout">
-                <label for="mostrar-checkout">Mostrar CheckOut</label>
-            </div>
+        <section class="filters">
+            <label for="data-inicio">Entrada de:</label>
+            <input type="date" id="data-inicio">
+            <label for="data-fim">Até:</label>
+            <input type="date" id="data-fim">
             <button class="update-button">Atualizar</button>
-        </div>
+        </section>
 
         <table>
             <thead>
                 <tr>
                     <th><input type="checkbox"></th>
                     <th>Ações</th>
-                    <th>HÓSPEDE</th>
-                    <th>DATA RESERVA</th>
-                    <th>NÚMERO RESERVA</th>
-                    <th>OCUPAÇÃO</th>
-                    <th>UH</th>
-                    <th>DATA ENTRADA</th>
-                    <th>DATA SAÍDA</th>
+                    <th>Hóspede</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><input type="checkbox"></td>
-                    <td class="icons">
-                        <span class="icon edit">✏️</span>
-                        <span class="icon view">📄</span>
-                        <span class="icon delete">🗑️</span>
-                    </td>
-                    <td>ADRIAAN KAR...</td>
-                    <td>11/07/2017</td>
-                    <td>2169</td>
-                    <td>RC</td>
-                    <td>Chale 401</td>
+                    <td>✏️ 📄</td>
+                    <td>Adriaan Kar...</td>
                     <td>16/07/2017</td>
                     <td>18/07/2017</td>
                 </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td class="icons">
-                        <span class="icon edit">✏️</span>
-                        <span class="icon view">📄</span>
-                        <span class="icon delete">🗑️</span>
-                    </td>
-                    <td>BOLSONARO</td>
-                    <td>11/07/2017</td>
-                    <td>2347</td>
-                    <td>RC</td>
-                    <td>Chale 420</td>
-                    <td>18/07/2017</td>
-                    <td>23/07/2017</td>
-                </tr>
-                <td><input type="checkbox"></td>
-                <td class="icons">
-                    <span class="icon edit">✏️</span>
-                    <span class="icon view">📄</span>
-                    <span class="icon delete">🗑️</span>
-                </td>
-                <td>GERMANO CAN...</td>
-                <td>11/07/2017</td>
-                <td>1523</td>
-                <td>RC</td>
-                <td>Chale 059</td>
-                <td>04/07/2017</td>
-                <td>11/07/2017</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td class="icons">
-                    <span class="icon edit">✏️</span>
-                    <span class="icon view">📄</span>
-                    <span class="icon delete">🗑️</span>
-                </td>
-                <td>PATRICK KI...</td>
-                <td>11/07/2017</td>
-                <td>1676</td>
-                <td>RC</td>
-                <td>Chale 101</td>
-                <td>20/07/2017</td>
-                <td>29/07/2017</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td class="icons">
-                    <span class="icon edit">✏️</span>
-                    <span class="icon view">📄</span>
-                    <span class="icon delete">🗑️</span>
-                </td>
-                <td>VITORIO ED...</td>
-                <td>11/07/2017</td>
-                <td>4121</td>
-                <td>RC</td>
-                <td>Chale 241</td>
-                <td>27/07/2017</td>
-                <td>01/08/2017</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td class="icons">
-                    <span class="icon edit">✏️</span>
-                    <span class="icon view">📄</span>
-                    <span class="icon delete">🗑️</span>
-                </td>
-                <td>FERNANDO CARD...</td>
-                <td>11/07/2017</td>
-                <td>1412</td>
-                <td>RC</td>
-                <td>Chale 311</td>
-                <td>30/07/2017</td>
-                <td>07/07/2017</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td class="icons">
-                    <span class="icon edit">✏️</span>
-                    <span class="icon view">📄</span>
-                    <span class="icon delete">🗑️</span>
-                </td>
-                <td>CALLERI...</td>
-                <td>11/07/2017</td>
-                <td>2121</td>
-                <td>RC</td>
-                <td>Chale 123</td>
-                <td>12/07/2017</td>
-                <td>15/07/2017</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td class="icons">
-                    <span class="icon edit">✏️</span>
-                    <span class="icon view">📄</span>
-                    <span class="icon delete">🗑️</span>
-                </td>
-                <td>LUCAS FER...</td>
-                <td>11/07/2017</td>
-                <td>1131</td>
-                <td>RC</td>
-                <td>Chale 011</td>
-                <td>24/07/2017</td>
-                <td>26/07/2017</td>
-            </tr>
+                <!-- Outras linhas podem ser adicionadas aqui -->
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="10">Total de Reservas: 8 | Total de Tarifa: R$ 11.920,00</td>
+                    <td colspan="5">Total de Reservas: 8</td>
                 </tr>
             </tfoot>
         </table>
