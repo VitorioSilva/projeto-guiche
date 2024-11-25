@@ -3,11 +3,18 @@ from flask import Flask, jsonify, request, render_template, redirect, url_for
 import pymysql
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
+import jwt
+from datetime import datetime, timedelta
+from functools import wraps
 
+# Carrega variáveis de ambiente do .env
 load_dotenv()
 
+# Configurações do app Flask
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY", "sua_chave_secreta_segura")
 
+# Configurações do banco de dados
 db_config = {
     "host": os.getenv("DB_HOST"),
     "user": os.getenv("DB_USER"),
@@ -16,9 +23,30 @@ db_config = {
     "cursorclass": pymysql.cursors.DictCursor
 }
 
+# Função para conectar ao banco de dados
 def get_db_connection():
     return pymysql.connect(**db_config)
 
+# Decorator para proteger rotas com JWT
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.headers.get('Authorization')  # Token esperado no cabeçalho
+        if not token:
+            return jsonify({'msg': 'Token de autenticação é necessário!'}), 403
+
+        try:
+            decoded = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+            request.user_id = decoded['user_id']  # Adiciona user_id ao request
+        except jwt.ExpiredSignatureError:
+            return jsonify({'msg': 'Token expirado!'}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({'msg': 'Token inválido!'}), 401
+
+        return f(*args, **kwargs)
+    return decorated
+
+# Endpoint de cadastro
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
@@ -34,9 +62,10 @@ def cadastro():
             return redirect(url_for('login'))
         except Exception as e:
             return jsonify({"msg": f"Erro ao cadastrar usuário: {e}"}), 500
-    # Método GET: Exibe a página de cadastro
+
     return render_template('cadastro.html')
 
+# Endpoint de login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -49,20 +78,24 @@ def login():
                     cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
                     user = cursor.fetchone()
                     if user and check_password_hash(user['senha'], senha):
-                        return redirect(url_for('servicos'))  # Redireciona para a página inicial após o login
+                        # Gerar um token JWT
+                        token = jwt.encode({
+                            'user_id': user['id'],
+                            'exp': datetime.utcnow() + timedelta(hours=1)
+                        }, app.config['SECRET_KEY'], algorithm='HS256')
+
+                        return jsonify({'token': token}), 200
                     else:
                         return jsonify({"msg": "Credenciais inválidas"}), 401
         except Exception as e:
             return jsonify({"msg": f"Erro ao fazer login: {e}"}), 500
-    # Método GET: Exibe a página de login
+
     return render_template('login.html')
 
+# Endpoint protegido: serviços
 @app.route('/servicos', methods=['GET', 'POST'])
+@token_required
 def servicos():
-    if request.method == 'POST':
-        # Lógica para manipulação de dados enviados via POST (se necessário)
-        pass
-
     try:
         with get_db_connection() as conn:
             with conn.cursor() as cursor:
@@ -72,9 +105,11 @@ def servicos():
     except Exception as e:
         return jsonify({"msg": f"Erro ao listar serviços: {e}"}), 500
 
+# Endpoint protegido: histórico
 @app.route('/historico', methods=['GET'])
+@token_required
 def historico():
-    usuario_id = request.args.get('usuario_id')  # O ID do usuário pode ser passado como parâmetro na URL
+    usuario_id = request.user_id
     
     try:
         with get_db_connection() as conn:
@@ -84,50 +119,6 @@ def historico():
         return render_template('historico.html', historico=historico)
     except Exception as e:
         return jsonify({"msg": f"Erro ao obter histórico: {e}"}), 500
-
-@app.route('/gerenciador', methods=['GET', 'POST'])
-def gerenciador():
-    if request.method == 'POST':
-        servico_id = request.form['servico_id']
-        novo_status = request.form['status']
-        
-        try:
-            with get_db_connection() as conn:
-                with conn.cursor() as cursor:
-                    cursor.execute("UPDATE servicos SET status = %s WHERE id = %s", (novo_status, servico_id))
-                    conn.commit()
-        except Exception as e:
-            return jsonify({"msg": f"Erro ao atualizar serviço: {e}"}), 500
-
-    try:
-        with get_db_connection() as conn:
-            with conn.cursor() as cursor:
-                cursor.execute("SELECT * FROM usuarios")
-                usuarios = cursor.fetchall()
-                cursor.execute("SELECT * FROM servicos")
-                servicos = cursor.fetchall()
-
-        return render_template('gerenciador.html', usuarios=usuarios, servicos=servicos)
-    except Exception as e:
-        return jsonify({"msg": f"Erro ao acessar gerenciador: {e}"}), 500
-
-@app.route('/check', methods=['GET', 'POST'])
-def check():
-    if request.method == 'POST':
-        usuario_id = request.form['usuario_id']
-        servico_id = request.form['servico_id']
-
-        try:
-            with get_db_connection() as conn:
-                with conn.cursor() as cursor:
-                    cursor.execute("INSERT INTO checkins (usuario_id, servico_id) VALUES (%s, %s)", (usuario_id, servico_id))
-                    conn.commit()
-            return redirect(url_for('historico', usuario_id=usuario_id))  # Redireciona para o histórico com o usuário ID
-        except Exception as e:
-            return jsonify({"msg": f"Erro ao realizar check-in: {e}"}), 500
-
-    # Método GET pode ser utilizado para retornar informações do check-in, se necessário
-    return render_template('check.html')
 
 @app.route('/')
 def index():
