@@ -4,19 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Ordem de Chegada - Atende Já</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='gerenciador.css')}}">
+    <link rel="stylesheet" href="CSS/gerenciador.css">
+    <script src="/projeto-guiche/frontend/js/gerenciador.js"></script>
 </head>
 <body>
-    <!-- Modal para a pergunta de acessibilidade -->
-    <div id="accessibilityModal" class="modal">
-        <div class="modal-content">
-            <p>Você é deficiente visual?</p>
-            <button onclick="setAccessibility(true)">Sim</button>
-            <button onclick="setAccessibility(false)">Não</button>
-        </div>
-    </div>
-
-    <!-- Header -->
     <header class="historico-header">
         <h1>Atende Já</h1>
         <button class="back-button" onclick="history.back()">Voltar</button>
@@ -27,12 +18,48 @@
         <button onclick="adicionarCliente()">Adicionar Cliente</button>
     </div>
 
-    <!-- Main Container -->
     <main class="order-container">
         <div id="client-list" class="client-list"></div>
     </main>
 
-    <!-- Link do arquivo JavaScript externo -->
-    <script src="/frontend/js/script.js"></script>
+    <script>
+        const clients = [
+            { nome: "Ana Souza de Oliveira", idade: 65, prioridade: true },
+            { nome: "Carlos Pereira da Cruz", idade: 34, prioridade: false },
+            { nome: "Joana Silva do Nascimento", idade: 28, prioridade: true },
+            { nome: "José Ferreira Cruz", idade: 75, prioridade: true },
+        ];
+
+        function displayClients() {
+            const clientList = document.getElementById("client-list");
+            clientList.innerHTML = "";
+            const sortedClients = clients.sort((a, b) => b.prioridade - a.prioridade);
+            sortedClients.forEach((client, index) => {
+                const clientItem = document.createElement("div");
+                clientItem.classList.add("client-item");
+                if (client.prioridade) {
+                    clientItem.classList.add("priority");
+                }
+                clientItem.innerHTML = `
+                    <p><strong>${index + 1}. Nome:</strong> ${client.nome}</p>
+                    <p><strong>Idade:</strong> ${client.idade}</p>
+                    <p><strong>Prioridade:</strong> ${client.prioridade ? "Sim" : "Não"}</p>
+                `;
+                clientList.appendChild(clientItem);
+            });
+        }
+
+        function adicionarCliente() {
+            const nome = prompt("Nome do cliente:");
+            const idade = prompt("Idade do cliente:");
+            const prioridade = confirm("O cliente se encaixa no padrão de prioridade? (+60 anos, gestante ou deficiente)");
+            if (nome && idade) {
+                clients.push({ nome, idade: parseInt(idade), prioridade });
+                displayClients();
+            }
+        }
+
+        displayClients();
+    </script>
 </body>
 </html>
