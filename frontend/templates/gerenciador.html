@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Ordem de Chegada - Atende Já</title>
-    <link rel="stylesheet" href="/projeto-guiche/frontend/static/gerenciador.css">
-    <script src="/projeto-guiche/frontend/js/gerenciador.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gerenciador.css') }}">
 </head>
+
 <body>
     <header class="historico-header">
         <h1>Atende Já</h1>
@@ -62,4 +63,5 @@
         displayClients();
     </script>
 </body>
+
 </html>
