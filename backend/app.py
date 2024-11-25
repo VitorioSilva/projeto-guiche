@@ -16,7 +16,7 @@ db_config = {
     "cursorclass": pymysql.cursors.DictCursor
 }
 
-SECRET_KEY = os.getenv("SECRET_KEY", "dgahgdyu54")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 
