@@ -3,50 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check-In</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='check.css')}}">
+    <title>Gerador de Senhas</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self'; 
+                   style-src 'self' 'unsafe-inline'; 
+                   img-src 'self' data:; 
+                   connect-src 'self'; 
+                   font-src 'self';">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Check-In</h1>
-            <button class="back-button">Voltar</button>
-        </header>
+        <h1>Gerador de Senhas</h1>
 
-        <section class="filters">
-            <label for="data-inicio">Entrada de:</label>
-            <input type="date" id="data-inicio">
-            <label for="data-fim">Até:</label>
-            <input type="date" id="data-fim">
-            <button class="update-button">Atualizar</button>
-        </section>
+        
+        <label for="clientName">Digite seu nome:</label>
+        <input type="text" id="clientName" placeholder="Seu nome aqui">
 
-        <table>
-            <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>Ações</th>
-                    <th>Hóspede</th>
-                    <th>Entrada</th>
-                    <th>Saída</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>✏️ 📄</td>
-                    <td>Adriaan Kar...</td>
-                    <td>16/07/2017</td>
-                    <td>18/07/2017</td>
-                </tr>
-                <!-- Outras linhas podem ser adicionadas aqui -->
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="5">Total de Reservas: 8</td>
-                </tr>
-            </tfoot>
-        </table>
+      
+        <button id="generateButton">Gerar Senha</button>
+
+        
+        <p><strong>Senha gerada:</strong> <span id="clientPassword">---</span></p>
+
+        
+        <h2>Próxima Senha:</h2>
+        <p id="currentPassword">---</p>
+
+        
+        <button id="callNextButton">Chamar Próxima Senha</button>
     </div>
+
+    
+    <script src="/frontend/js/chenk.js"></script>
 </body>
 </html>
