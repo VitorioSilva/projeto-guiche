@@ -80,7 +80,7 @@ def login():
 
                         token = generate_jwt_token(user)
 
-                        return redirect(url_for('servicos', token=token))  # Redireciona para a página de serviços
+                        return redirect(url_for('servicos', token=token))
                     else:
                         return jsonify({"msg": "Credenciais inválidas"}), 401
         except Exception as e:

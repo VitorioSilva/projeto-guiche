@@ -3,40 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senhas</title>  
     <link rel="stylesheet" href="{{ url_for('static', filename='check.css') }}">
-
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                   script-src 'self'; 
-                   style-src 'self' 'unsafe-inline'; 
-                   img-src 'self' data:; 
-                   connect-src 'self'; 
-                   font-src 'self';">
+    <title>Gerador de Senhas</title>
 </head>
 <body>
     <div class="container">
         <h1>Gerador de Senhas</h1>
-
-        
         <label for="clientName">Digite seu nome:</label>
         <input type="text" id="clientName" placeholder="Seu nome aqui">
-
-      
         <button id="generateButton">Gerar Senha</button>
-
-        
         <p><strong>Senha gerada:</strong> <span id="clientPassword">---</span></p>
-
-        
         <h2>Próxima Senha:</h2>
         <p id="currentPassword">---</p>
-
-        
         <button id="callNextButton">Chamar Próxima Senha</button>
     </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const clientNameInput = document.getElementById("clientName");
+    const clientPassword = document.getElementById("clientPassword");
+    const currentPassword = document.getElementById("currentPassword");
+    const generateButton = document.getElementById("generateButton");
+    const notificationArea = document.getElementById("notification");
 
-    
-    <script src="/frontend/js/chenk.js"></script>
+    let currentOrder = 0; // Contador para senhas chamadas em ordem
+    let generatedPassword = null; // Senha gerada atual
+    let clientName = ""; // Nome do cliente
+    let autoCallInterval = null; // Intervalo para chamada automática
+
+    // Configuração do tempo entre chamadas (em milissegundos)
+    const TIME_BETWEEN_CALLS = 500; // 5 segundos
+
+    // Função para gerar uma senha aleatória de 1 a 100
+    const generateRandomPassword = () => {
+        return Math.floor(Math.random() * 100) + 1; // Retorna um número entre 1 e 100
+    };
+
+    // Função para iniciar a chamada automática de senhas
+    const startAutoCall = () => {
+        if (autoCallInterval) return; // Evita múltiplos intervalos
+        autoCallInterval = setInterval(() => {
+            currentOrder++;
+
+            // Verifica se o contador atingiu o limite de 100
+            if (currentOrder > 100) {
+                alert("Todas as senhas foram chamadas. Reiniciando o contador.");
+                currentOrder = 1; // Reinicia o contador
+            }
+
+            // Atualiza a próxima senha automaticamente
+            currentPassword.textContent = `Senha ${currentOrder}`;
+
+            // Verifica se a senha chamada é a gerada pelo cliente
+            if (currentOrder === generatedPassword) {
+                notificationArea.textContent = `Sua vez, ${clientName}! Por favor, dirija-se ao atendimento.`;
+                
+
+                // Para a chamada automática
+                clearInterval(autoCallInterval);
+                autoCallInterval = null;
+
+                // Reinicia o sistema para aguardar um novo nome e senha
+                resetSystem();
+            } else {
+                notificationArea.textContent = ""; // Limpa a mensagem
+            }
+        }, TIME_BETWEEN_CALLS); // Tempo definido para chamar a próxima senha
+    };
+
+    // Função para reiniciar o sistema após atendimento
+    const resetSystem = () => {
+        clientPassword.textContent = "---"; // Reseta a senha gerada
+        currentPassword.textContent = "---"; // Reseta a senha atual
+        notificationArea.textContent = ""; // Limpa notificações
+        generatedPassword = null; // Reseta a senha gerada
+        currentOrder = 0; // Reseta o contador de senhas
+    };
+
+    // Evento para gerar uma nova senha
+    generateButton.addEventListener("click", () => {
+        clientName = clientNameInput.value.trim(); // Remove espaços desnecessários
+
+        // Verifica se o nome foi preenchido
+        if (!clientName) {
+            alert("Por favor, insira seu nome antes de gerar uma senha.");
+            return;
+        }
+
+        // Gera uma senha aleatória
+        generatedPassword = generateRandomPassword();
+        clientPassword.textContent = `Senha ${generatedPassword}`; // Mostra a senha gerada
+
+        // Inicia a chamada automática de senhas
+        startAutoCall();
+    });
+});
+    </script>
 </body>
 </html>
